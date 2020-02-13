@@ -30,27 +30,7 @@ module Jekyll
     # monkey-patching its `write` method and building it.
     def self.init(config = {})
       # Monkey patch Jekyll and external plugins
-      load_overwrites
-
-      config = Configurator.init(config).config
-      @site = Jekyll::Algolia::Site.new(config)
-
-      unless Configurator.assert_valid_credentials
-        raise(
-          MissingCredentialsError,
-          "One or more credentials were not found for site at: #{@site.source}"
-        )
-      end
-
-      Configurator.warn_of_deprecated_options
-
-      if Configurator.dry_run?
-        Logger.log('W:==== THIS IS A DRY RUN ====')
-        Logger.log('W:  - No records will be pushed to your index')
-        Logger.log('W:  - No settings will be updated on your index')
-      end
-
-      self
+      p "IT SEEMS TO BE WORKING NOW -----------------------------------------"
     end
 
     # Public: Monkey patch Jekyll and external plugins so they don't interfere
